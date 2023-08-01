@@ -1,0 +1,22 @@
+#first-header {
+	background-color: #333;
+	color: #fff;
+}
+#second-header,
+#title {
+	background-image: linear-gradient(to left,#ebece9,#eee);
+}
+#menu a ,
+#title{
+	color: #78221f !important;
+}
+#slide-background {
+	background-color: #78221f;
+	background-image: url(../img/bg_pattern.png)
+}
+#title{
+  border-radius: 10px;
+}
+#footer{
+  background-color: #343a40!important;
+}

@@ -1,0 +1,45 @@
+:root{
+  --color-1:#dcdcea;
+  --color-2: #af3c47;
+}
+.box_title {
+	background-image: linear-gradient(to bottom right,#162423,#131d23);
+	color: #fff;
+	border:solid 2px #eee;
+	border-bottom: none;
+}
+.log_in_container{
+	color: #af3c47; 
+	/* background-image: linear-gradient(to top left,#eed,#edd); */
+}
+#account_information {
+	background-color: #cbcbd9;
+	color: var(--color-2);
+}
+
+#function_name {
+	background-color: #cbcbd9;
+	color: var(--color-2);
+}
+#menu {
+	background-color: #000404;
+	color: #cbcbd9;
+	background-image: url(/WebBanHang/img/admin/bg_pattern.png);
+}
+#logo {
+	background-color: #ebf2fb;
+	color: var(--color-2);
+}
+#menu .nav-link {
+	color: #d5d5e2
+}
+#menu .nav-link:hover {
+	color: #fff
+}
+#menu .nav-item {
+	border-bottom: solid 1px #333838;
+}
+button {
+	background-image: linear-gradient(to bottom right,#af3c47,#2d180f);
+	color: #fff!important;
+}

@@ -1,0 +1,39 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+.field-icon {
+	position: absolute;
+	right: 26px;
+	top: 53%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+#main {
+	margin-left: 300px;
+}
+#menu {
+	position: fixed;
+	height: 100%;
+	width: 300px;
+	z-index: 1000;
+}
+#menu .nav {
+	width: 100%
+}
+#logo {
+	font-weight: bold;
+	width: 300px;
+}
+#menu .nav-item span {
+	float: right;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+#menu .nav-link {
+	float: left;
+}
+button { 
+	text-transform: uppercase;
+}
