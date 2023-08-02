@@ -33,5 +33,5 @@
 	  $params['hinh_anh'] = $hinh_anh;
 	}
   execute_command($sql, $params);
-	header('Location: quan_ly_tin_tuc.php',TRUE, 307 );
+	header("Location: sua_tin_tuc.php?id={$ma_tin_tuc}",TRUE, 307 );
 ?>

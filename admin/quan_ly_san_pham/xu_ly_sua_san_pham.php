@@ -35,5 +35,5 @@
   $params['trang_thai'] = $trang_thai;
   $params['mo_ta'] = $mo_ta;
   execute_command($sql,$params); 
-  header("Location: quan_ly_san_pham.php", TRUE, 307);
+  header("Location: sua_san_pham.php?id={$ma_san_pham}", TRUE, 307);
 ?>

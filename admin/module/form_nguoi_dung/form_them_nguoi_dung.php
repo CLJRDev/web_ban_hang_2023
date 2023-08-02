@@ -23,6 +23,6 @@
 </div>
 <div class="col-md-12">
   <div class="form-group">
-    <button class="btn font-weight-bold">Sửa người dùng</button>
+    <button class="btn font-weight-bold">Thêm người dùng</button>
   </div>
 </div>

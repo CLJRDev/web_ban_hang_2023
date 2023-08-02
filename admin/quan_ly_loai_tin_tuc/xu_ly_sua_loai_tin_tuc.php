@@ -10,5 +10,5 @@
   $params['trang_thai'] = $trang_thai;
   $sql = "UPDATE loai_tin_tuc SET ten_loai_tin_tuc = :ten_loai_tin_tuc, trang_thai = :trang_thai WHERE ma_loai_tin_tuc = :ma_loai_tin_tuc";
   execute_command($sql, $params);  
-  location('them_loai_tin_tuc.php');
+  location("sua_loai_tin_tuc.php?id={$ma_loai_tin_tuc}");
 ?>

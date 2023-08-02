@@ -10,11 +10,17 @@
 		location('them_nguoi_dung.php');
 		return;
 	}
-	$sql = "UPDATE nguoi_dung SET mat_khau=:mat_khau, trang_thai=:trang_thai WHERE tai_khoan=:tai_khoan";
-	$params = array();
+  $params = array();
+  $sql = "";
   $params['tai_khoan'] = $tai_khoan;
-  $params['mat_khau'] =  $mat_khau;
   $params['trang_thai'] =  $trang_thai;
+  if ($_POST['mat_khau'] != '') {
+    $params['mat_khau'] =  $mat_khau;
+    $sql = "UPDATE nguoi_dung SET mat_khau=:mat_khau, trang_thai=:trang_thai WHERE tai_khoan=:tai_khoan";
+  }
+  else {
+    $sql = "UPDATE nguoi_dung SET trang_thai=:trang_thai WHERE tai_khoan=:tai_khoan";
+  }
   execute_command($sql, $params);
-	location('them_nguoi_dung.php');
+  location("sua_nguoi_dung.php?id={$tai_khoan}");
 ?>
