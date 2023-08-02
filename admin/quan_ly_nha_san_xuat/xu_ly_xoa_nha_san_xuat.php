@@ -6,7 +6,7 @@
   //Kiem tra rang buoc
   $data = execute_query("SELECT COUNT(*) AS dem FROM san_pham WHERE ma_nha_san_xuat = :ma_nha_san_xuat", $param);
   if($data[0]['dem'] > 0){
-    alert('Còn sản phẩm thuộc nhà sản xuất này');
+    alert('Còn sản phẩm thuộc nhà sản xuất này');   //sdsdsd
     location('them_nha_san_xuat.php');
     return;
   }
