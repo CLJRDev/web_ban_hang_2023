@@ -19,8 +19,8 @@
       <a href="../quan_ly_loai_san_pham/them_loai_san_pham.php"><span class="bi bi-collection-fill"></span></a>
     </li>
     <li class="nav-item p-1">
-      <a class="nav-link" href="#">Quản lý nhà sản xuất</a>
-      <span class="bi bi-collection-fill"></span>
+      <a class="nav-link" href="../quan_ly_nha_san_xuat/them_nha_san_xuat.php">Quản lý nhà sản xuất</a>
+      <a href="../quan_ly_nha_san_xuat/them_nha_san_xuat.php"><span class="bi bi-collection-fill"></span></a>
     </li>
     <li class="nav-item p-1">
       <a class="nav-link" href="../quan_ly_loai_tin_tuc/them_loai_tin_tuc.php">Quản lý loại tin tức</a>

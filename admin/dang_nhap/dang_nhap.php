@@ -17,7 +17,7 @@
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" id="mat_khau_dang_nhap" name="mat_khau" placeholder="Mật khẩu" required>
-						<span toggle="#mat_khau_dang_nhap" class="bi bi-eye field-icon toggle-password"></span>
+						<!-- <span toggle="#mat_khau_dang_nhap" class="bi bi-eye field-icon toggle-password"></span> -->
 					</div>
 					<div class="form-group text-center">
 						<button class="btn btn-md font-weight-bold">Đăng Nhập</button>
