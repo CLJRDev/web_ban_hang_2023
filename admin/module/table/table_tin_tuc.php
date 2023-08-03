@@ -13,8 +13,31 @@
         <tbody>
             <?php
                 include '../module/convert.php';
-                $tin_tucs =  execute_query("SELECT ma_tin_tuc, tieu_de, ten_loai_tin_tuc, ngay_dang, tin_tuc.trang_thai FROM tin_tuc 
-                INNER JOIN loai_tin_tuc ON tin_tuc.ma_loai_tin_tuc = loai_tin_tuc.ma_loai_tin_tuc");
+                $sql = "SELECT ma_tin_tuc, tieu_de, ten_loai_tin_tuc, ngay_dang, tin_tuc.trang_thai FROM tin_tuc 
+                INNER JOIN loai_tin_tuc ON tin_tuc.ma_loai_tin_tuc = loai_tin_tuc.ma_loai_tin_tuc WHERE 1=1";
+
+                $params = array();
+                if(isset($_SESSION['tu_khoa_tin_tuc'])){
+                  $sql = $sql . " AND CONCAT(tieu_de,tom_tat,noi_dung) LIKE CONCAT('%',:tu_khoa,'%')";
+                  $params['tu_khoa'] = $_SESSION['tu_khoa_tin_tuc'];
+                }
+                if(isset($_SESSION['tu_ngay_tin_tuc'])){
+                  $sql = $sql . " AND ngay_dang >= :tu_ngay";
+                  $params['tu_ngay'] = $_SESSION['tu_ngay_tin_tuc'];
+                }
+                if(isset($_SESSION['den_ngay_tin_tuc'])){
+                  $sql = $sql . " AND ngay_dang <= :den_ngay";
+                  $params['den_ngay'] = $_SESSION['den_ngay_tin_tuc'];
+                }
+                if(isset($_SESSION['ma_loai_tin_tuc'])){
+                  $sql = $sql . " AND tin_tuc.ma_loai_tin_tuc = :ma_loai_tin_tuc";
+                  $params['ma_loai_tin_tuc'] = $_SESSION['ma_loai_tin_tuc'];
+                }
+                if(isset($_SESSION['trang_thai_tin_tuc']) && $_SESSION['trang_thai_tin_tuc'] != -1){
+                  $sql = $sql . " AND tin_tuc.trang_thai = :trang_thai";
+                  $params['trang_thai'] = $_SESSION['trang_thai_tin_tuc'];
+                }
+                $tin_tucs = execute_query($sql, $params);
                 foreach($tin_tucs as $tin_tuc)                 
                   echo '<tr>
                       <td class="text-center">'. $tin_tuc['ma_tin_tuc'].'</td>

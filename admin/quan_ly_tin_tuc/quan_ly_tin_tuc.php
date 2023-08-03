@@ -13,14 +13,16 @@
 	<div class="container-fluid px-0">
 		<?php
 		include '../module/menu.php';?>
-    <div id="main" class="row no-gutters p-3">
-      <?php 
-        include '../module/header.php'; 
-        include '../module/form_tin_tuc/form_quan_ly_tin_tuc.php'; 
-        include '../module/table/table_tin_tuc.php';  
-        include '../module/menu_function.php';
-      ?>
-    </div>
+    <form action="xu_ly_tim_kiem_tin_tuc.php" method="post">
+      <div id="main" class="row no-gutters p-3">
+        <?php 
+          include '../module/header.php'; 
+          include '../module/form_tin_tuc/form_quan_ly_tin_tuc.php'; 
+          include '../module/table/table_tin_tuc.php';  
+          include '../module/menu_function.php';
+        ?>
+      </div>
+    </form>
 	</div>
 </body>
 </html>
