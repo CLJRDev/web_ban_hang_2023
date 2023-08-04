@@ -16,14 +16,16 @@
 		<?php
       include '../module/menu.php';
     ?>
-		<div id="main" class="row no-gutters p-3">
-			<?php
-        include '../module/header.php';
-        include '../module/form_san_pham/form_quan_ly_san_pham.php';
-        include '../module/table/table_san_pham.php';
-        include '../module/menu_function.php';
-      ?>						
-		</div>
+    <form action="xu_ly_tim_kiem_san_pham.php" method="post">
+      <div id="main" class="row no-gutters p-3">
+        <?php
+          include '../module/header.php';
+          include '../module/form_san_pham/form_quan_ly_san_pham.php';
+          include '../module/table/table_san_pham.php';
+          include '../module/menu_function.php';
+        ?>						
+      </div>
+    </form>
 	</div>
 </body>
 </html>

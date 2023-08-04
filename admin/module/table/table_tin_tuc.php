@@ -29,7 +29,7 @@
                   $sql = $sql . " AND ngay_dang <= :den_ngay";
                   $params['den_ngay'] = $_SESSION['den_ngay_tin_tuc'];
                 }
-                if(isset($_SESSION['ma_loai_tin_tuc'])){
+                if(isset($_SESSION['ma_loai_tin_tuc']) && $_SESSION['ma_loai_tin_tuc'] != -1){
                   $sql = $sql . " AND tin_tuc.ma_loai_tin_tuc = :ma_loai_tin_tuc";
                   $params['ma_loai_tin_tuc'] = $_SESSION['ma_loai_tin_tuc'];
                 }
