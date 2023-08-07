@@ -13,11 +13,19 @@
     </div>
     <div class="form-group">
         <label for="tu_ngay">Từ ngày</label>
-        <input name="tu_ngay" type="date" class="form-control tu_ngay" id="tu_ngay" value="<?php if(isset($_SESSION['tu_ngay_tin_tuc'])) echo $_SESSION['tu_ngay_tin_tuc']; ?>">
+        <input name="tu_ngay" placeholder="dd/mm/yyyy" type="text" class="form-control tu_ngay" id="tu_ngay" value="<?php 
+          if(isset($_SESSION['tu_ngay_tin_tuc']))
+            if($_SESSION['tu_ngay_tin_tuc'] != '') 
+              echo format_date_vn($_SESSION['tu_ngay_tin_tuc']); 
+        ?>">
     </div>
     <div class="form-group">
         <label for="den_ngay">Đến ngày</label>
-        <input name="den_ngay" type="date" class="form-control den_ngay" id="den_ngay" value="<?php if(isset($_SESSION['den_ngay_tin_tuc'])) echo $_SESSION['den_ngay_tin_tuc']; ?>">  
+        <input name="den_ngay" placeholder="dd/mm/yyyy" type="text" class="form-control den_ngay" id="den_ngay" value="<?php 
+          if(isset($_SESSION['den_ngay_tin_tuc']))
+            if($_SESSION['den_ngay_tin_tuc'] != '') 
+              echo format_date_vn($_SESSION['den_ngay_tin_tuc']); 
+        ?>">  
     </div>    
 </div>
 <div class="col-md-6 p-3">
