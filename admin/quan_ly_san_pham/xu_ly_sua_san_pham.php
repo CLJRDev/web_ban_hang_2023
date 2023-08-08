@@ -1,5 +1,6 @@
 <?php
   include '../module/database.php';
+  include '../module/javascript.php';
   $ma_san_pham = $_POST['ma_san_pham'];
   $ten_san_pham = $_POST['ten_san_pham'];
   $loai_san_pham = $_POST['loai_san_pham'];
@@ -9,8 +10,17 @@
   $trang_thai = isset($_POST['trang_thai']);
   $mo_ta = $_POST['mo_ta'];
 
-  $sql = "";
   $params = array();
+  $params['ma_san_pham'] = $ma_san_pham;
+  $params['ten_san_pham'] = $ten_san_pham;
+  $data = execute_query("SELECT COUNT(*) AS dem FROM san_pham WHERE ten_san_pham = :ten_san_pham AND ma_san_pham <> :ma_san_pham", $params);
+  if($data[0]['dem'] > 0){
+    alert('Tên sản phẩm đã tồn tại');
+		location("sua_san_pham.php?id={$ma_san_pham}");
+		return;
+  }
+
+  $sql = "";
   if($file_name == ''){    
     $sql = "UPDATE san_pham SET ten_san_pham = :ten_san_pham, ma_loai_san_pham = :ma_loai_san_pham, ma_nha_san_xuat = :ma_nha_san_xuat, gia = :gia, trang_thai = :trang_thai, mo_ta = :mo_ta WHERE ma_san_pham = :ma_san_pham";
   }else{
@@ -27,8 +37,6 @@
     $sql = "UPDATE san_pham SET ten_san_pham = :ten_san_pham, ma_loai_san_pham = :ma_loai_san_pham, ma_nha_san_xuat = :ma_nha_san_xuat, hinh_anh = :hinh_anh, gia = :gia, trang_thai = :trang_thai, mo_ta = :mo_ta WHERE ma_san_pham = :ma_san_pham";
     $params['hinh_anh'] = $hinh_anh;
   }
-  $params['ma_san_pham'] = $ma_san_pham;
-  $params['ten_san_pham'] = $ten_san_pham;
   $params['ma_loai_san_pham'] = $loai_san_pham;
   $params['ma_nha_san_xuat'] = $nha_san_xuat;
   $params['gia'] = $gia;

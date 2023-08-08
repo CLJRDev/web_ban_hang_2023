@@ -1,5 +1,6 @@
 <?php
   include '../module/database.php';  
+  include '../module/javascript.php';
   $ten_san_pham = $_POST['ten_san_pham'];
   $loai_san_pham = $_POST['loai_san_pham'];
   $nha_san_xuat = $_POST['nha_san_xuat'];
@@ -8,6 +9,15 @@
   $trang_thai = isset($_POST['trang_thai']);
   $mo_ta = $_POST['mo_ta'];
 
+  $params = array();
+  $params['ten_san_pham'] = $ten_san_pham;
+  $data = execute_query("SELECT COUNT(*) AS dem FROM san_pham WHERE ten_san_pham = :ten_san_pham", $params);
+  if($data[0]['dem'] > 0){
+    alert('Tên sản phẩm đã tồn tại');
+		location('them_san_pham.php');
+		return;
+  }
+  
   $parts = explode('.', $file_name); 
   $date = new DateTimeImmutable();
   $file_name = md5($date->getTimestamp().$file_name) . '.'. $parts[count($parts) - 1];
@@ -16,8 +26,6 @@
 
   $sql = "INSERT san_pham (ten_san_pham,hinh_anh,gia,mo_ta,luot_xem,trang_thai,ma_loai_san_pham,ma_nha_san_xuat,tai_khoan) VALUES
   (:ten_san_pham, :hinh_anh, :gia, :mo_ta,100, :trang_thai, :ma_loai_san_pham, :ma_nha_san_xuat,'admin')";
-  $params = array();
-  $params['ten_san_pham'] = $ten_san_pham;
   $params['hinh_anh'] = $hinh_anh;
   $params['gia'] = $gia;
   $params['mo_ta'] = $mo_ta;
