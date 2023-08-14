@@ -13,9 +13,7 @@
     </thead>
     <tbody>
       <?php
-        $sql = "SELECT ma_san_pham, ten_san_pham, ten_loai_san_pham, ten_nha_san_xuat, gia, san_pham.trang_thai FROM san_pham 
-                INNER JOIN loai_san_pham ON san_pham.ma_loai_san_pham = loai_san_pham.ma_loai_san_pham 
-                INNER JOIN nha_san_xuat ON san_pham.ma_nha_san_xuat = nha_san_xuat.ma_nha_san_xuat WHERE 1=1";
+        $sql = "SELECT * FROM v_san_pham WHERE 1=1";
         $params = array();
         if(isset($_SESSION['tu_khoa_san_pham']))
           if($_SESSION['tu_khoa_san_pham'] != ''){
@@ -34,12 +32,12 @@
           }
         if(isset($_SESSION['tu_gia']))
           if($_SESSION['tu_gia'] != ''){
-            $sql .= " AND gia >= :tu_gia";
+            $sql .= " AND gia_khuyen_mai >= :tu_gia";
             $params['tu_gia'] = $_SESSION['tu_gia'];
           }        
         if(isset($_SESSION['den_gia']))
           if($_SESSION['den_gia'] != ''){
-            $sql .= " AND gia <= :den_gia";
+            $sql .= " AND gia_khuyen_mai <= :den_gia";
             $params['den_gia'] = $_SESSION['den_gia'];
           }
         if(isset($_SESSION['trang_thai_san_pham']))
@@ -47,6 +45,12 @@
             $sql .= " AND san_pham.trang_thai = :trang_thai";
             $params['trang_thai'] = $_SESSION['trang_thai_san_pham'];
           }
+        $page_index = 1;
+        $page_length = 10;
+        if(isset($_GET['pid']))
+          $page_index = $_GET['pid'];
+        $start_index = ($page_index - 1) * $page_length;
+        $sql = $sql." LIMIT {$start_index}, {$page_length}";
         $san_phams = execute_query($sql, $params);        
         foreach($san_phams as $san_pham){        
           echo "<tr>
@@ -54,7 +58,7 @@
             <td>{$san_pham['ten_san_pham']}</td>
             <td>{$san_pham['ten_loai_san_pham']}</td>
             <td>{$san_pham['ten_nha_san_xuat']}</td>
-            <td>{$san_pham['gia']}</td>
+            <td>{$san_pham['gia_khuyen_mai']}</td>
             <td class='text-center'><input onclick='return false;' type='checkbox' " . ($san_pham['trang_thai'] == 1 ? 'checked' : '') . "></td>
             <td class='text-center'>
              <a href='sua_san_pham.php?id=".$san_pham['ma_san_pham']."'><i class='bi bi-pen-fill'></i></a> | 
@@ -62,7 +66,23 @@
             </td>
           </tr>";
         }              
-      ?>            
+      ?>                  
     </tbody>
   </table>
+</div>
+<div class="col-md-12">
+  <div class="pagination d-flex justify-content-center">
+    <ul class="pagination">
+      <?php
+        $row_number = execute_query("SELECT COUNT(*) AS dem FROM san_pham")[0]['dem'];
+        $page_number = (int) $row_number / $page_length;
+        if($row_number % $page_length != 0)
+          $page_number++;
+        for($i = 1; $i <= $page_number; $i++)
+          echo "<li class='page-item'>
+            <a href='/web_ban_hang/admin/quan_ly_san_pham/quan_ly_san_pham.php?pid={$i}' class='page-link'>{$i}</a>
+          </li>";
+      ?>
+    </ul>
+  </div>
 </div>

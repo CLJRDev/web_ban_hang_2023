@@ -41,6 +41,12 @@
                     $sql = $sql . " AND tin_tuc.trang_thai = :trang_thai";
                     $params['trang_thai'] = $_SESSION['trang_thai_tin_tuc'];
                   }
+                $page_index = 1;
+                $page_length = 10;
+                if(isset($_GET['pid']))
+                  $page_index = $_GET['pid'];
+                $page_start = ($page_index - 1) * $page_length;
+                $sql .= " LIMIT {$page_start}, {$page_length}";
                 $tin_tucs = execute_query($sql, $params);
                 foreach($tin_tucs as $tin_tuc)                 
                   echo '<tr>
@@ -59,4 +65,20 @@
             ?>
         </tbody>
     </table>
+</div>
+<div class="col-md-12">
+  <div class="pagination d-flex justify-content-center">
+    <ul class="pagination">
+      <?php
+        $row_number = execute_query("SELECT COUNT(*) AS dem FROM tin_tuc")[0]['dem'];
+        $page_number = (int) $row_number / $page_length;
+        if($row_number % $page_length != 0)
+          $page_number++;
+        for($i = 1; $i <= $page_number; $i++)
+          echo "<li class='page-item'>
+            <a href='/web_ban_hang/admin/quan_ly_tin_tuc/quan_ly_tin_tuc.php?pid={$i}' class='page-link'>{$i}</a>
+          </li>";
+      ?>
+    </ul>
+  </div>
 </div>

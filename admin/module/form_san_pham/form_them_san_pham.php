@@ -31,11 +31,21 @@
       ?>
     </select>
   </div>
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input name="trang_thai" type="checkbox" class="form-check-input">
+      Kích hoạt
+    </label>
+  </div>
 </div>
 <div class="col-md-6 px-3 pt-3">        
   <div class="form-group">
     <label for="gia">Giá</label>
     <input name="gia" type="number" class="form-control require positive_number" id="gia">
+  </div>   
+  <div class="form-group">
+    <label for="gia_khuyen_mai">Giá khuyến mãi</label>
+    <input name="gia_khuyen_mai" type="number" class="form-control require positive_number" id="gia_khuyen_mai">
   </div>    
   <div class="form-group">
     <label for="hinh_anh">Hình ảnh</label>
@@ -43,12 +53,6 @@
       <input name="hinh_anh" type="file" class="custom-file-input" id="hinh_anh">
       <label class="custom-file-label" for="customFile">Chọn file ảnh</label>
     </div>
-  </div>
-  <div class="form-group form-check">
-    <label class="form-check-label">
-      <input name="trang_thai" type="checkbox" class="form-check-input">
-      Kích hoạt
-    </label>
   </div>    
 </div>
 <div class="col-md-12 px-3">

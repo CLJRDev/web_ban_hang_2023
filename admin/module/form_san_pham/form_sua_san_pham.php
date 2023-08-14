@@ -60,6 +60,10 @@
     <label for="gia">Giá</label>
     <input type="number" class="form-control require positive_number" id="gia" name="gia" value="<?php echo $san_pham['gia']; ?>">
   </div> 
+  <div class="form-group">
+    <label for="gia_khuyen_mai">Giá khuyến mãi</label>
+    <input type="number" class="form-control require positive_number" id="gia_khuyen_mai" name="gia_khuyen_mai" value="<?php echo $san_pham['gia_khuyen_mai']; ?>">
+  </div> 
   <div class="form-group form-check">
     <label class="form-check-label">
       <input type="checkbox" class="form-check-input" name="trang_thai" <?php if($san_pham['trang_thai'] == 1) echo 'checked'; ?>>
@@ -78,6 +82,6 @@
 </div>
 <div class="col-md-12 px-3">
   <div class="form-group">
-    <button type="submit" class="btn font-weight-bold">Cập nhập sản phẩm <i style="font-size: 20px;" class='bx bxs-edit'></i></button>
+    <button type="submit" class="btn font-weight-bold">Cập nhập sản phẩm <i class="bi bi-pencil-square"></i></button>
   </div>        
 </div>	

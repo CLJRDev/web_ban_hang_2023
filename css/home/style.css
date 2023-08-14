@@ -16,3 +16,7 @@
   border-radius: 15px;
   cursor: pointer;  
 }
+.sidebar{
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  border-radius: 10px;  
+}

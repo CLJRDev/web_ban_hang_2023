@@ -1,20 +1,26 @@
+:root{
+  --color-1: #78221f;
+  --color-2: #ffc107;
+	--color-3: #d9d9d9;
+}
 #first-header {
 	background-color: #333;
 	color: #fff;
 }
 #second-header,
-#title {
+.title {
 	background-image: linear-gradient(to left,#ebece9,#eee);
 }
 #menu a ,
-#title{
+.title,
+.sidebar-title{
 	color: #78221f !important;
 }
 #slide-background {
 	background-color: #78221f;
 	background-image: url(../img/bg_pattern.png)
 }
-#title{
+.title{
   border-radius: 10px;
 }
 #footer{

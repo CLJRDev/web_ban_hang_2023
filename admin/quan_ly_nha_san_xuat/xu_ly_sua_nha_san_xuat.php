@@ -19,7 +19,7 @@
 		$sql = "UPDATE nha_san_xuat SET ten_nha_san_xuat = :ten_nha_san_xuat, trang_thai = :trang_thai	WHERE ma_nha_san_xuat = :ma_nha_san_xuat";  
 	}
 	else{
-		$hinh_anh = execute_query("SELECT hinh_anh FROM nha_san_xuat WHERE ma_nha_san_xuat = :ma_nha_san_xuat", $params);
+		$hinh_anh = execute_query("SELECT hinh_anh FROM nha_san_xuat WHERE ma_nha_san_xuat = :ma_nha_san_xuat", array('ma_nha_san_xuat' => $ma_nha_san_xuat));
 		unlink('../../data/nha_san_xuat/'.$hinh_anh[0][0]);
 		$parts = explode('.', $filename);
 		$file_type = $parts[count($parts) - 1];
