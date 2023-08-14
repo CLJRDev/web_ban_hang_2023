@@ -20,3 +20,22 @@
   box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
   border-radius: 10px;  
 }
+.img_news{
+	width: 250px;
+  height: 150px;
+  object-fit: cover;
+  float: left;
+}
+.summary{
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Số dòng tối đa */
+  -webkit-line-clamp: 3; 
+  -moz-line-clamp: 3;
+  -ms-line-clamp: 3;
+  /* Độ cao mỗi dòng */
+  line-height: 1.5em; 
+  max-height: 4.5em; /* (Số dòng tối đa + 1) * độ cao mỗi dòng */
+	
+}
