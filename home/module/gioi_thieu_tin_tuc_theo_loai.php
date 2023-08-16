@@ -33,10 +33,10 @@
         foreach($tin_tucs as $tin_tuc)
           echo "
             <a href='/web_ban_hang/home/trinh_bay_tin_tuc.php?id={$tin_tuc['ma_tin_tuc']}' class='col-md-12 d-flex pb-4 text-decoration-none text-dark'>
-              <img src='/web_ban_hang/data/tin_tuc/{$tin_tuc['hinh_anh']}' class='img_news'>
-              <div class='news_info ml-3'>
-                <h5 class='news_title font-weight-bold m-0 mb-2'>{$tin_tuc['tieu_de']}</h5>
-                <div class='date_views font-italic mb-2'>Ngày đăng: {$tin_tuc['ngay_dang']} - Lượt xem: {$tin_tuc['luot_xem']}</div>
+              <img src='/web_ban_hang/data/tin_tuc/{$tin_tuc['hinh_anh']}' class='w-25'>
+              <div class='ml-3'>
+                <h5 class='font-weight-bold m-0 mb-2'>{$tin_tuc['tieu_de']}</h5>
+                <div class='font-italic mb-2'>Ngày đăng: {$tin_tuc['ngay_dang']} - Lượt xem: {$tin_tuc['luot_xem']}</div>
                 <div class='summary'>
                   <p>{$tin_tuc['tom_tat']}</p>       
                 </div>
