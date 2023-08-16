@@ -12,8 +12,8 @@
       <?php        
         $ma_loai_san_pham = (int)$_GET['id'];     
         $params = array('ma_loai_san_pham' => $ma_loai_san_pham);
-        $nha_san_xuats = execute_query("SELECT * FROM loai_san_pham WHERE ma_loai_san_pham=:ma_loai_san_pham", $params);        
-        if(count($nha_san_xuats) == 0){
+        $loai_san_phams = execute_query("SELECT * FROM loai_san_pham WHERE ma_loai_san_pham=:ma_loai_san_pham", $params);        
+        if(count($loai_san_phams) == 0){
           alert("Nhà sản xuất không tồn tại");
           location("gioi_thieu_san_pham_theo_nha_san_xuat.php?id={$nha_san_xuat['ma_loai_san_pham']}");
         }else

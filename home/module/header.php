@@ -4,12 +4,12 @@
     <div class="col-md-2 py-2 pl-3"><i class="bi bi-phone-fill pr-1"></i> 079.123.4567</div>
     <div class="col-md-2 py-2 pl-3"><i class="bi bi-envelope-fill pr-1"></i> website@gmail.com</div>
     <div class="col-md-6 py-2 px-3"> 
-      <div class="input-group-sm input-group">
-        <input type="text" class="form-control my-0 mr-0" placeholder="Từ khóa">
+      <form action="/web_ban_hang/home/xu_ly_tim_kiem_tu_khoa.php" class="input-group-sm input-group">
+        <input name="tu_khoa" type="text" class="form-control my-0 mr-0" placeholder="Từ khóa">
         <div class="input-group-append">
           <button class="btn btn-sm btn-danger my-0">Tìm kiếm <i class="bi bi-search"></i></button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   <div class="row">
