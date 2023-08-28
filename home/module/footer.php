@@ -8,7 +8,7 @@
         <i class="bi bi-building"></i>MarsFourShop
       </h6>
       <p>
-        Công ty thành lập năm 2023 trong khi đang dạy 4 thằng nhãi cách lập trình web bởi thầy Lê Quyết Tiến
+        Công ty thành lập năm 2023 
       </p>
       </div>
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">

@@ -25,6 +25,8 @@
       </ul>
       <h4 class="p-2 font-weight-bold">Mô tả sản phẩm</h4>
       <p class="border rounded p-3"><?php echo $san_pham['mo_ta'] ?></p>
+      <a href="/web_ban_hang/home/xu_ly_mua_ngay.php?id=<?php echo $ma_san_pham ?>"><button class="btn btn-danger">Mua ngay</button></a>
+      <a href="/web_ban_hang/home/xu_ly_them_gio_hang.php?id=<?php echo $ma_san_pham ?>"><button class="btn btn-info">Thêm giỏ hàng <i class="bi bi-cart-plus"></i></button></a>
     </div>
   </div>
 </div>

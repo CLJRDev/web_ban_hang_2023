@@ -44,7 +44,7 @@
         </div>
         </li>
         <li class="nav-item px-3"><a href="/web_ban_hang/home/gioi_thieu_tat_ca_tin_tuc.php" class="nav-link"><i class="bi bi-newspaper"></i> Tin tức</a></li>
-        <li class="nav-item px-3"><a class="nav-link"><i class="bi bi-envelope-fill pr-2"></i> Thông tin liên hệ</a></li>
+        <li class="nav-item px-3"><a class="nav-link" href="/web_ban_hang/home/gio_hang.php"><i class="bi bi-basket"></i> Giỏ hàng</a></li>
       </ul>
       </div>
     </nav>
